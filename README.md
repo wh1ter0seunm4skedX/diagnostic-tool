@@ -4,11 +4,17 @@ A cross-platform diagnostic tool designed to troubleshoot performance and system
 
 ## **Features**
 - **Windows Diagnostics:** 
-  - CPU, memory, disk space usage.
+  - CPU, memory, and disk space usage.
   - Installed applications and startup programs.
   - Network diagnostics (ping test, open connections).
   - Error logs and hardware information.
   - Windows Update status.
+  - Advanced diagnostics:
+    - Security checks (firewall and antivirus status).
+    - Battery health for laptops.
+    - Process and resource hog detection.
+    - Storage health (SMART data).
+    - Boot time analysis.
 
 - **macOS Diagnostics:** 
   - System and hardware overview.
@@ -16,6 +22,11 @@ A cross-platform diagnostic tool designed to troubleshoot performance and system
   - Startup programs and network diagnostics.
   - System error logs and software updates.
   - Peripheral and thermal status.
+  - Advanced diagnostics:
+    - Battery health for laptops.
+    - Process and resource hog detection.
+    - Storage health (SMART data).
+    - Boot time analysis.
 
 - **Logs:** 
   - All diagnostic results are saved in timestamped log files for easy sharing and analysis.
@@ -26,16 +37,30 @@ A cross-platform diagnostic tool designed to troubleshoot performance and system
 ```plaintext
 diagnostic-tool/
 ├── windows/
-│   ├── diagnostic.ps1      
+│   ├── diagnostic.ps1            # Main Windows diagnostic script
+│   ├── advanced/                 # Advanced diagnostic tools
+│   │   ├── security_check.ps1
+│   │   ├── battery_check.ps1
+│   │   ├── network_performance.ps1
+│   │   ├── storage_health.ps1
+│   │   └── boot_analysis.ps1
 │   ├── README.md               
 ├── macos/
-│   ├── diagnostic.sh           
+│   ├── diagnostic.sh             # Main macOS diagnostic script
+│   ├── advanced/                 # Advanced diagnostic tools
+│   │   ├── security_check.sh
+│   │   ├── battery_check.sh
+│   │   ├── network_performance.sh
+│   │   ├── storage_health.sh
+│   │   └── boot_analysis.sh
 │   ├── README.md               
 ├── shared/
-│   ├── logs/                   # Folder to store diagnostic logs
-│   ├── utilities/              # basically the helpers in the future enhencements
+│   ├── logs/                     # Folder to store diagnostic logs
+│   ├── utilities/                # Helper scripts and shared resources
+│   │   ├── os_detector.sh        
 │   └── README.md               
-├── README.md                   
+├── LICENSE                      
+├── README.md                     
 ```
 
 ---
@@ -48,11 +73,16 @@ diagnostic-tool/
    ```powershell
    cd path\to\diagnostic-tool\windows
    ```
-3. Run the script:
+3. Run the main diagnostic script:
    ```powershell
    .\diagnostic.ps1
    ```
-4. Find the log file in the `shared/logs/` folder.
+4. To use advanced tools, navigate to the `advanced/` folder and run the desired script:
+   ```powershell
+   cd advanced
+   .\battery_check.ps1
+   ```
+5. Find the log files in the `shared/logs/` folder.
 
 ---
 
@@ -62,15 +92,20 @@ diagnostic-tool/
    ```bash
    cd path/to/diagnostic-tool/macos
    ```
-3. Make the script executable (only needed once):
+3. Make the main diagnostic script executable (only needed once):
    ```bash
    chmod +x diagnostic.sh
    ```
-4. Run the script with sudo:
+4. Run the main diagnostic script with sudo:
    ```bash
    sudo ./diagnostic.sh
    ```
-5. Find the log file in the `shared/logs/` folder.
+5. To use advanced tools, navigate to the `advanced/` folder and run the desired script:
+   ```bash
+   cd advanced
+   sudo ./battery_check.sh
+   ```
+6. Find the log files in the `shared/logs/` folder.
 
 ---
 
@@ -101,3 +136,5 @@ This project is licensed under the MIT License.
 - Add cross-platform log parsing for easier comparison.
 - Create a web-based dashboard for log visualization.
 - Extend the tool to include Linux diagnostics.
+- Automate running advanced diagnostics as part of the main scripts.
+- Add alerts for critical findings in logs.
