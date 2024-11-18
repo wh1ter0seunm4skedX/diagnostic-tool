@@ -1,0 +1,1 @@
+Measure-Command { Restart-Computer }
