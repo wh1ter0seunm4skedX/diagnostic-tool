@@ -33,7 +33,7 @@ vm_stat | tee -a "$LOG_FILE"
 log "\n=== DISK SPACE ==="
 df -h | tee -a "$LOG_FILE"
 
-# Startup Items
+# Startup Items - Login
 log "\n=== STARTUP PROGRAMS ==="
 osascript -e 'tell application "System Events" to get the name of every login item' | tee -a "$LOG_FILE"
 
