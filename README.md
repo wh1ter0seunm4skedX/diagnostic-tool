@@ -38,6 +38,7 @@ A cross-platform diagnostic tool designed to troubleshoot performance and system
 diagnostic-tool/
 ├── windows/
 │   ├── diagnostic.ps1            # Main Windows diagnostic script
+│   ├── diagnostic_menu.ps1       # Windows menu script
 │   ├── advanced/                 # Advanced diagnostic tools
 │   │   ├── security_check.ps1
 │   │   ├── battery_check.ps1
@@ -47,6 +48,7 @@ diagnostic-tool/
 │   ├── README.md               
 ├── macos/
 │   ├── diagnostic.sh             # Main macOS diagnostic script
+│   ├── diagnostic_menu.sh        # macOS menu script
 │   ├── advanced/                 # Advanced diagnostic tools
 │   │   ├── security_check.sh
 │   │   ├── battery_check.sh
@@ -73,16 +75,20 @@ diagnostic-tool/
    ```powershell
    cd path\to\diagnostic-tool\windows
    ```
-3. Run the main diagnostic script:
+3. Run the menu script for interactive usage:
+   ```powershell
+   .\diagnostic_menu.ps1
+   ```
+4. Alternatively, run the main diagnostic script directly:
    ```powershell
    .\diagnostic.ps1
    ```
-4. To use advanced tools, navigate to the `advanced/` folder and run the desired script:
+5. To use advanced tools, navigate to the `advanced/` folder and run the desired script:
    ```powershell
    cd advanced
    .\battery_check.ps1
    ```
-5. Find the log files in the `shared/logs/` folder.
+6. Find the log files in the `shared/logs/` folder.
 
 ---
 
@@ -92,11 +98,12 @@ diagnostic-tool/
    ```bash
    cd path/to/diagnostic-tool/macos
    ```
-3. Make the main diagnostic script executable (only needed once):
+3. Run the menu script for interactive usage:
    ```bash
-   chmod +x diagnostic.sh
+   chmod +x diagnostic_menu.sh  # Make executable (only needed once)
+   ./diagnostic_menu.sh
    ```
-4. Run the main diagnostic script with sudo:
+4. Alternatively, run the main diagnostic script directly:
    ```bash
    sudo ./diagnostic.sh
    ```
