@@ -1,0 +1,3 @@
+shared/logs/*
+
+!shared/logs/logHere.push

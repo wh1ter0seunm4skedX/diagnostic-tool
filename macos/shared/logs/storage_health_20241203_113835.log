@@ -1,0 +1,7 @@
+=== SECURITY CHECK ===
+Firewall Status:
+Gatekeeper Status:
+assessments enabled
+System Integrity Protection (SIP) Status:
+System Integrity Protection status: enabled.
+Security check completed. Logs saved to ./shared/logs/storage_health_20241203_113835.log.

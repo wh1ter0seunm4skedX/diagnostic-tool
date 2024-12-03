@@ -1,0 +1,13 @@
+=== NETWORK PERFORMANCE ===
+Ping Test to Google:
+PING google.com (142.250.75.78): 56 data bytes
+64 bytes from 142.250.75.78: icmp_seq=0 ttl=119 time=8.004 ms
+64 bytes from 142.250.75.78: icmp_seq=1 ttl=119 time=6.427 ms
+64 bytes from 142.250.75.78: icmp_seq=2 ttl=119 time=7.487 ms
+64 bytes from 142.250.75.78: icmp_seq=3 ttl=119 time=7.000 ms
+
+--- google.com ping statistics ---
+4 packets transmitted, 4 packets received, 0.0% packet loss
+round-trip min/avg/max/stddev = 6.427/7.229/8.004/0.584 ms
+speedtest-cli is not installed. Skipping speed test.
+Network performance analysis completed. Logs saved to ./shared/logs/network_performance_20241203_143607.log.

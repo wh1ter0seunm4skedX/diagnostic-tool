@@ -1,0 +1,14 @@
+=== EVENT LOG CATEGORIZATION ===
+
+Critical Events (Last 30 Days):
+show
+show
+
+High Severity Events (Last 30 Days):
+show
+show
+
+Medium Severity Events (Last 30 Days):
+show
+show
+Event log categorization completed. Logs saved to ./shared/logs/event_log_analysis_20241203_112943.log.

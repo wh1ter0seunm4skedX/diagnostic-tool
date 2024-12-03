@@ -1,0 +1,174 @@
+=== PERIPHERAL DEVICES ===
+Connected USB Devices:
+USB:
+
+    USB 3.1 Bus:
+
+      Host Controller Driver: AppleT6000USBXHCI
+
+        USB3.0 Hub:
+
+          Product ID: 0x0b40
+          Vendor ID: 0x8087  (Intel Corporation)
+          Version: 12.34
+          Speed: Up to 10 Gb/s
+          Manufacturer: Intel Corporation.
+          Location ID: 0x02200000 / 2
+          Current Available (mA): 900
+          Current Required (mA): 0
+          Extra Operating Current (mA): 0
+
+            USB3.1 Hub:
+
+              Product ID: 0x0f30
+              Vendor ID: 0x1532
+              Version: 30.60
+              Speed: Up to 10 Gb/s
+              Manufacturer: Razer
+              Location ID: 0x02240000 / 3
+              Current Available (mA): 900
+              Current Required (mA): 0
+              Extra Operating Current (mA): 0
+
+                USB 10/100/1000 LAN:
+
+                  Product ID: 0x8153
+                  Vendor ID: 0x0bda  (Realtek Semiconductor Corp.)
+                  Version: 31.00
+                  Serial Number: 001000000
+                  Speed: Up to 5 Gb/s
+                  Manufacturer: Realtek
+                  Location ID: 0x02245000 / 6
+                  Current Available (mA): 900
+                  Current Required (mA): 288
+                  Extra Operating Current (mA): 0
+
+        USB2.0 Hub:
+
+          Product ID: 0x5801
+          Vendor ID: 0x1d5c  (Fresco Logic Inc.)
+          Version: 1.01
+          Speed: Up to 480 Mb/s
+          Manufacturer: Fresco Logic, Inc.
+          Location ID: 0x02100000 / 1
+          Current Available (mA): 500
+          Current Required (mA): 0
+          Extra Operating Current (mA): 0
+
+            USB2.0 Hub:
+
+              Product ID: 0x0f2f
+              Vendor ID: 0x1532
+              Version: 30.60
+              Speed: Up to 480 Mb/s
+              Manufacturer: Razer
+              Location ID: 0x02140000 / 5
+              Current Available (mA): 500
+              Current Required (mA): 0
+              Extra Operating Current (mA): 0
+
+                Thunderbolt 4 Dock:
+
+                  Product ID: 0x122e
+                  Vendor ID: 0x1532
+                  Version: 17.46
+                  Serial Number: 11AD1D85C8592F1440100B00
+                  Speed: Up to 12 Mb/s
+                  Manufacturer: Razer
+                  Location ID: 0x02148000 / 7
+                  Current Available (mA): 500
+                  Current Required (mA): 0
+                  Extra Operating Current (mA): 0
+
+            USB 2.0 BILLBOARD             :
+
+              Product ID: 0x0103
+              Vendor ID: 0x2109  (VIA Labs, Inc.)
+              Version: a0.52
+              Serial Number: 0000000000000001
+              Speed: Up to 12 Mb/s
+              Manufacturer: VIA Technologies Inc.         
+              Location ID: 0x02130000 / 4
+              Current Available (mA): 500
+              Extra Operating Current (mA): 0
+
+    USB 3.1 Bus:
+
+      Host Controller Driver: AppleT6000USBXHCI
+
+    USB 3.1 Bus:
+
+      Host Controller Driver: AppleT6000USBXHCI
+
+
+Connected Thunderbolt Devices:
+Thunderbolt/USB4:
+
+    Thunderbolt/USB4 Bus 2:
+
+      Vendor Name: Apple Inc.
+      Device Name: MacBook Pro
+      UID: 0x05ACE2748FA118A2
+      Route String: 0
+      Domain UUID: 7E995EF4-2352-47A8-A2C9-0E866559F47C
+      Port:
+          Status: Device connected
+          Link Status: 0x2
+          Speed: 40 Gb/s
+          Receptacle: 3
+
+        Thunderbolt 4 Dock:
+
+          Vendor Name: Razer
+          Device Name: Thunderbolt 4 Dock
+          Mode: USB4
+          Device ID: 0x122E
+          Vendor ID: 0x1532
+          Device Revision: 0x1
+          UID: 0x808717D9AC104F00
+          Route String: 1
+          Firmware Version: 30.1
+          Port (Upstream):
+              Status: Device connected
+              Link Status: 0x2
+              Speed: 40 Gb/s
+          Port:
+              Status: No device connected
+              Link Status: 0x7
+              Speed: Up to 40 Gb/s
+          Port:
+              Status: No device connected
+              Link Status: 0x7
+              Speed: Up to 40 Gb/s
+          Port:
+              Status: No device connected
+              Link Status: 0x7
+              Speed: Up to 40 Gb/s
+
+    Thunderbolt/USB4 Bus 1:
+
+      Vendor Name: Apple Inc.
+      Device Name: MacBook Pro
+      UID: 0x05ACE2748FA118A1
+      Route String: 0
+      Domain UUID: FF1DB40E-B496-49F6-9842-A421091A31FC
+      Port:
+          Status: No device connected
+          Link Status: 0x100
+          Speed: Up to 40 Gb/s
+          Receptacle: 2
+
+    Thunderbolt/USB4 Bus 0:
+
+      Vendor Name: Apple Inc.
+      Device Name: MacBook Pro
+      UID: 0x05ACE2748FA118A0
+      Route String: 0
+      Domain UUID: DDDFC0B9-650E-4CFF-8DC5-C966ABA828A2
+      Port:
+          Status: No device connected
+          Link Status: 0x100
+          Speed: Up to 40 Gb/s
+          Receptacle: 1
+
+Peripheral devices check completed. Logs saved to ./shared/logs/peripheral_check_20241203_112952.log.

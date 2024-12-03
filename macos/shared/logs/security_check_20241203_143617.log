@@ -1,0 +1,23 @@
+=== STORAGE HEALTH ===
+Disk Information:
+/dev/disk0 (internal, physical):
+   #:                       TYPE NAME                    SIZE       IDENTIFIER
+   0:      GUID_partition_scheme                        *500.3 GB   disk0
+   1:             Apple_APFS_ISC Container disk1         524.3 MB   disk0s1
+   2:                 Apple_APFS Container disk3         494.4 GB   disk0s2
+   3:        Apple_APFS_Recovery Container disk2         5.4 GB     disk0s3
+
+/dev/disk3 (synthesized):
+   #:                       TYPE NAME                    SIZE       IDENTIFIER
+   0:      APFS Container Scheme -                      +494.4 GB   disk3
+                                 Physical Store disk0s2
+   1:                APFS Volume Macintosh HD            10.7 GB    disk3s1
+   2:              APFS Snapshot com.apple.os.update-... 10.7 GB    disk3s1s1
+   3:                APFS Volume Preboot                 6.6 GB     disk3s2
+   4:                APFS Volume Recovery                976.5 MB   disk3s3
+   5:                APFS Volume Macintosh HD - Data     35.8 GB    disk3s5
+   6:                APFS Volume VM                      4.3 GB     disk3s6
+
+SMART Status:
+   SMART Status:              Verified
+Storage health check completed. Logs saved to ./shared/logs/security_check_20241203_143617.log.

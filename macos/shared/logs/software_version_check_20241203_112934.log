@@ -1,0 +1,26 @@
+=== SOFTWARE VERSION CHECK ===
+Listing Installed Applications and Versions:
+Axis Security: Version info not found
+Falcon.app: 7.19
+Folge.app: 1.19.7
+Google Chrome.app: 131.0.6778.86
+Google Docs.app: 100.0
+Google Sheets.app: 100.0
+Google Slides.app: 100.0
+Island.app: 131.1.55.19
+Jamf Connect.app: 2.41.0
+Maccy.app: 2.1.0
+Postman.app: 11.21.0
+PowerShell.app: 7.4.6
+Rectangle.app: 0.84
+Safari.app: 18.1.1
+Self Service.app: 11.11.1
+Slack.app: 4.41.98
+TeamViewer.app: 15.50.5
+Utilities: Version info not found
+VLC.app: 3.0.21
+Visual Studio Code.app: 1.95.2
+WebStorm.app: 2024.3
+Windows App.app: 11.0.7
+zoom.us.app: 6.2.11 (43613)
+Software version check completed. Logs saved to ./shared/logs/software_version_check_20241203_112934.log.
