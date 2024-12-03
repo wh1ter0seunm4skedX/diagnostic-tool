@@ -8,7 +8,6 @@ display_menu() {
     echo ""
     echo "1) Run Full Diagnostics"
     echo "2) Advanced Tools"
-    echo "3) Exit"
 }
 
 run_advanced_tools() {
@@ -93,7 +92,12 @@ run_advanced_tools() {
 run_menu() {
     while true; do
         display_menu
-        read -p "Enter your choice [1-3]: " CHOICE
+        read -p "Enter your choice: " CHOICE
+
+        if [[ "$CHOICE" == "exit" ]]; then
+            echo "Exiting. Bye :)"
+            exit 0
+        fi
 
         case $CHOICE in
             1)
@@ -103,10 +107,6 @@ run_menu() {
             2)
                 echo "Opening Advanced Tools..."
                 run_advanced_tools
-                ;;
-            3)
-                echo "Exiting the Diagnostic Tool."
-                exit 0
                 ;;
             *)
                 echo "Invalid option. Please try again."
