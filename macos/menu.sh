@@ -1,13 +1,34 @@
 #!/bin/bash
 
-# Function to display the main menu
+if [ -f "./animations.sh" ]; then
+    source ./animations.sh
+else
+    echo "Error: animations.sh not found."
+    exit 1
+fi
+
 display_menu() {
     echo "======================================="
     echo "      Diagnostic Tool Main Menu        "
     echo "======================================="
     echo ""
     echo "1) Run Full Diagnostics"
-    echo "2) Advanced Tools"
+    echo "2) Clean Up Cache and Temp Files"
+    echo "3) Advanced Tools"
+    echo "4) Exit"
+}
+
+run_cleanup() {
+    clear
+    display_ascii_art
+    countdown 1
+    echo "Starting Cache and Temp File Cleanup..."
+    if [ -f "./cleanup.sh" ]; then
+        ./cleanup.sh
+    else
+        echo "Error: cleanup.sh not found."
+    fi
+    echo "Cleanup complete! Your machine should now be faster."
 }
 
 run_advanced_tools() {
@@ -88,25 +109,24 @@ run_advanced_tools() {
     esac
 }
 
-# Main menu execution
 run_menu() {
     while true; do
         display_menu
-        read -p "Enter your choice: " CHOICE
-
-        if [[ "$CHOICE" == "exit" ]]; then
-            echo "Exiting. Bye :)"
-            exit 0
-        fi
+        read -p "Enter your choice [1-4]: " CHOICE
 
         case $CHOICE in
             1)
-                echo "Running Full Diagnostics..."
                 ./diagnostic.sh
                 ;;
             2)
-                echo "Opening Advanced Tools..."
+                run_cleanup
+                ;;
+            3)
                 run_advanced_tools
+                ;;
+            4)
+                echo "Exiting the Diagnostic Tool."
+                exit 0
                 ;;
             *)
                 echo "Invalid option. Please try again."

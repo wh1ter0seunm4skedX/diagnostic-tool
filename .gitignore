@@ -1,3 +1,7 @@
 shared/logs/*
 
 !shared/logs/logHere.push
+
+macos/shared/logs/*
+
+!macos/shared/logHere/log_father_do_not_remove.dirbalack
