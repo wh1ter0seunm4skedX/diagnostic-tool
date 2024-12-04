@@ -1,6 +1,5 @@
 #!/bin/zsh
 
-# Load animations
 if [ -f "./animations.sh" ]; then
     source ./animations.sh
 else
@@ -12,45 +11,48 @@ BASE_DIR=$(dirname "$(pwd)")
 LOG_DIR="$BASE_DIR/shared/logs"
 LOG_FILE="$LOG_DIR/cleanup_$(date +%Y%m%d_%H%M%S).log"
 
-# Ensure log directory exists
 mkdir -p "$LOG_DIR"
 
-# Function to log output
 log() {
-    echo "$1" | tee -a "$LOG_FILE"
+    echo -e "$1" | tee -a "$LOG_FILE"
 }
 
-# Cleanup cache and temp files
 clear
 display_ascii_art
-spinner "Cleaning cache and temporary files" &
+spinner "Preparing Cleanup Tool" &
 sleep 2
+kill $! 2>/dev/null
 
-log "=== CLEANUP STARTED - $(date) ==="
+log "\033[34m=== CLEANUP STARTED - $(date) ===\033[0m"
 
-# Delete User Cache
-log "\nDeleting user cache..."
-rm -rf ~/Library/Caches/* && log "User cache cleared." || log "Failed to clear user cache."
+DRY_RUN=false
+if [[ "$1" == "--dry-run" ]]; then
+    DRY_RUN=true
+    log "\033[33mDry run mode enabled. No files will be deleted.\033[0m"
+fi
 
-# Delete System Cache
-log "\nDeleting system cache..."
-sudo rm -rf /Library/Caches/* && log "System cache cleared." || log "Failed to clear system cache."
+cleanup_task() {
+    local description=$1
+    local command=$2
+    log "\n$description..."
+    if $DRY_RUN; then
+        log "\033[36mSimulating: $command\033[0m"
+    else
+        eval "$command" && log "\033[32mSuccess: $description.\033[0m" || log "\033[31mFailed: $description.\033[0m"
+    fi
+}
 
-# Delete Temporary Files
-log "\nDeleting temporary files..."
-sudo rm -rf /private/tmp/* && log "Temporary files cleared." || log "Failed to clear temporary files."
+cleanup_task "Deleting user cache" "rm -rf ~/Library/Caches/*"
+cleanup_task "Deleting system cache" "sudo rm -rf /Library/Caches/*"
+cleanup_task "Deleting temporary files" "sudo rm -rf /private/tmp/*"
+cleanup_task "Clearing application support cache" "rm -rf ~/Library/Application\\ Support/*Cache*"
+cleanup_task "Emptying Trash" "rm -rf ~/.Trash/*"
+cleanup_task "Optimizing disk usage" "sudo diskutil repairPermissions /"
 
-# Delete Application Support Cache
-log "\nClearing application support cache..."
-rm -rf ~/Library/Application\ Support/*Cache* && log "Application support cache cleared." || log "Failed to clear application support cache."
+log "\033[34m=== CLEANUP COMPLETED - $(date) ===\033[0m"
 
-# Clear Trash
-log "\nEmptying Trash..."
-rm -rf ~/.Trash/* && log "Trash emptied." || log "Failed to empty trash."
+spinner "Finalizing cleanup" &
+sleep 2
+kill $! 2>/dev/null
 
-# Optimize Disk Usage
-log "\nOptimizing disk usage..."
-sudo diskutil repairPermissions / && log "Disk permissions repaired." || log "Failed to repair disk permissions."
-
-log "\n=== CLEANUP COMPLETED - $(date) ==="
-kill $!
+echo -e "\033[0;32mCleanup complete! Logs saved to $LOG_FILE.\033[0m"
